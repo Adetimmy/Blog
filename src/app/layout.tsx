@@ -21,7 +21,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
     <html lang="en">
       <body className={`${inter.className} max-w-[100vw] overflow-hidden`}>
        <div className='min-h-screen text-textColor bg-mainBg'>
-        <div className={`bg-[purple] lg:mx-[5%] xl:mx-[10%] ${css2xl} ${cssxl} ${csslg} ${cssmd} ${css3xl}`}>
+        <div className={`lg:mx-[5%] xl:mx-[10%] ${css2xl} ${cssxl} ${csslg} ${cssmd} ${css3xl}`}>
           <Navbar />
           {children}
           <Footer />
