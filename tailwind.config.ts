@@ -11,14 +11,14 @@ const config: Config = {
         work: ['Work Sans', 'sans-serif']
     },
     backgroundColor:{
-      bg:'white',
+      mainBg:'white',
       softBg:"#f0f0f0",
     },
    colors:{
       textColor:"black",
       softTextColor:"#626262",
-    }
-    
+    },
+       
   },
   plugins: [],
 }
