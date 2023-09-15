@@ -1,3 +1,5 @@
+import { Footer } from './components/Footer'
+import { Navbar } from './components/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -9,17 +11,21 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }:{children:React.ReactNode}) {
-  const css2xl = '2xl:max-w-[1536px] 2xl:px-20' 
-  const cssxl = 'xl:max-w-[1366px]'
-  const csslg = 'lg:max-w-[768px] lg:px-10'
-  const cssmd = 'md:max-w-[640px]' 
-  const csssm = 'sm:max-w-[475px]'
+  const css3xl = '2xl:min-w-[65%] 2xl:px-20' 
+  const css2xl = 'xl:min-w-[70%]'
+  const cssxl = 'lg:min-w-[75%] lg:px-10'
+  const csslg = 'md:min-w-[85%]' 
+  const cssmd = 'sm:min-w-[100%]'
   
   return (
     <html lang="en">
       <body className={`${inter.className} max-w-[100vw] overflow-hidden`}>
        <div className='min-h-screen text-textColor bg-mainBg'>
-        <div className={`bg-[purple] mx-[10%] ${css2xl} ${cssxl} ${csslg} ${cssmd} ${csssm}`}>{children}</div>
+        <div className={`bg-[purple] lg:mx-[5%] xl:mx-[10%] ${css2xl} ${cssxl} ${csslg} ${cssmd} ${css3xl}`}>
+          <Navbar />
+          {children}
+          <Footer />
+          </div>
         </div> 
       </body>
     </html>
