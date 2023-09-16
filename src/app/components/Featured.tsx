@@ -4,11 +4,11 @@ import React from 'react'
 export const Featured = () => {
   return (
     <div className='mt-8'>
-      <h1 className='text-8xl font-light'>
+      <h1 className='sm:text-[36px] text-[24px] xl:text-[72px] lg:text-[64px] md:text-[48px] 2xl:text-[96px] font-light'>
         <b className='font-bold'>Hey, Adetimmy here!</b> Discover my stories and creative ideas. 
       </h1>
       <div className='mt-16 flex items-center gap-12'>
-        <div className='flex-1 h-[500px] relative'>
+        <div className='lg:flex flex-1 h-[500px] relative hidden'>
           <Image src='/p1.jpeg' alt='img' fill className='object-cover'/>
         </div>
         <div className='flex-1 flex-col gap-5 flex'>
