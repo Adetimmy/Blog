@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Menu = () => {
   return (
-    <div>Menu</div>
+    <div className='' style={{flex:"2" }}>Menu</div>
   )
 }
