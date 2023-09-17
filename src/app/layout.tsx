@@ -25,7 +25,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
       <ThemeContextProvider>
         <Provider>
           <div className='min-h-screen text-textColor dark:bg-darkBg dark:text-darkColor bg-mainBg flex justify-center py-4 min-w-full'>
-            <div className={`w-full px-[20px] lg:mx-[7%] lg:px-[40px]  xl:mx-[12%] xl:px-[50px] 2xl:mx-[15%] 2xl:px[80px]`}>
+            <div className={`w-full mx-[30px] sm:mx-[50px] px-[10px] lg:mx-[5%] lg:px-[15px]  xl:mx-[8%] xl:px-[30px] 2xl:mx-[10%] 2xl:px[50px]`}>
               <Navbar />
               {children}
               <Footer />

@@ -1,48 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { categoiesData } from './data'
 
 export const CategoryList = () => {
-
-const categoiesData = [
-  {
-    title: "Style",
-    image:"/style.png",
-    color:"#57c4ff31",
-    link:"/blog?cat=style" 
-  },
-  {
-    title: "Fashion",
-    image:"/fashion.png",
-    color:"#da85c731",
-    link:"/blog" 
-  },
-  {
-    title: "Food",
-    image:"/food.png",
-    color:"#7fb88133",
-    link:"/blog" 
-  },
-  {
-    title: "Travel",
-    image:"/travel.png",
-    color:"#ff795736",
-    link:"/blog" 
-  },
-  {
-    title: "Culture",
-    image:"/culture.png",
-    color:"#ffb04f45",
-    link:"/blog" 
-  },
-  {
-    title: "Coding",
-    image:"/coding.png",
-    color:"#5e4fff31",
-    link:"/blog" 
-  },
-]
-
 
   return (
     <div>
@@ -53,8 +14,8 @@ const categoiesData = [
               <Link
               key={category.title}
               href={category.link}
-              className={`flex items-center  bg-[${category.color}] gap-3 w-full md:w-[45%] lg:w-[25%] xl-w-[20%] 2xl:w-[15%]  h-20 justify-center rounded-xl`
-                        }  
+              className={`flex items-center gap-3 w-full md:w-[45%] lg:w-[25%] xl-w-[20%] 2xl:w-[15%]  h-20 justify-center rounded-xl`
+                        }  style={{backgroundColor:`${category.color}`}}
               >
                 <Image
                 src={category.image}
