@@ -3,6 +3,5 @@
 @tailwind utilities;
 
 h1{
-    font-size: 32pt;
-    font-weight: 700;
+   @apply 2xl:text-[40px] xl:text-[32px] md:text-[28px] text-[18px] font-semibold
 }

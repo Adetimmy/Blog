@@ -21,7 +21,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
   
   return (
     <html lang="en">
-      <body className={`${inter.className} max-w-[100vw] overflow-hidden`}>
+      <body className={`${inter.className} max-w-[100vw]`}>
       <ThemeContextProvider>
         <Provider>
           <div className='min-h-screen text-textColor dark:bg-darkBg dark:text-darkColor bg-mainBg flex justify-center py-4 min-w-full'>

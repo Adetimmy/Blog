@@ -1,5 +1,5 @@
 import { Pagination } from './Pagination'
-import { Card } from './card'
+import { Card } from './Card'
 
 export const CardList = () => {
   return (
@@ -7,6 +7,9 @@ export const CardList = () => {
       <h1 className='my-[50px]'>Recent Posts</h1>
       <div>
         <div>
+          <Card/>
+          <Card/>
+          <Card/>
           <Card/>
         </div>
       </div>

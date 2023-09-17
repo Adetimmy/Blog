@@ -8,9 +8,6 @@ const config: Config = {
   ],
   darkMode:"class",
   theme: {
-       fontFamily: {
-        work: ['Work Sans', 'sans-serif']
-    },
     backgroundColor:{
       mainBg:'white',
       darkBg:"#0f172a",
