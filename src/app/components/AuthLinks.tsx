@@ -27,7 +27,7 @@ export const AuthLinks = () => {
             
         </div>
 
-        {open && <div className='md:hidden absolute top-[48px] left-0 bg-mainBg dark:bg-darkBg h-[calc(100vh-100px)] text-[36px] w-full flex-col flex justify-center items-center gap-12 '>
+        {open && <div className='md:hidden absolute top-[48px] left-0 bg-mainBg dark:bg-darkBg min-h-[100vh] overflow-hidden text-[36px] w-full flex-col flex justify-center items-center gap-12 '>
             <Link href='/' className='xl:text-[18px] '>Homepage</Link>
             <Link href='/' className='xl:text-[18px] '>Contact</Link>
             <Link href='/' className='xl:text-[18px] '>About</Link>

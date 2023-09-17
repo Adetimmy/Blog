@@ -1,7 +1,7 @@
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { Provider } from './components/Provider'
-import { ThemeContextProvider } from './components/context/useStateContext'
+import { ThemeContextProvider } from './context/useStateContext'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -21,7 +21,7 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
   
   return (
     <html lang="en">
-      <body className={`${inter.className} max-w-[100vw]`}>
+      <body className={`${inter.className} w-[100vw] h-screen overflow-auto`}>
       <ThemeContextProvider>
         <Provider>
           <div className='min-h-screen text-textColor dark:bg-darkBg dark:text-darkColor bg-mainBg flex justify-center py-4 min-w-full'>
