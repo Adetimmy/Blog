@@ -7,7 +7,7 @@ import { Category } from './Category'
 export const Menu = () => {
   return (
     <div className='mt-[60px] hidden lg:inline' style={{flex:"2" }}>
-      <h2 className='text-[gray] text-[13px] font-normal'>What's Hot</h2>
+      <h2 className='text-[gray] text-[13px] font-normal'>{"What's Hot"}</h2>
       <h1 className='text-[24px]'>Most Popular</h1>
       <div className='flex flex-col-reverse gap-4 my-1  '>
         {categoiesData.map(category => (
@@ -31,7 +31,7 @@ export const Menu = () => {
      <div className='my-5'><Category /></div>     
      <div>
         <h2 className='text-[gray] text-[13px] font-normal'>Chosen by the editor</h2>
-        <h1 className='text-[24px]'>Editor's Pick</h1>
+        <h1 className='text-[24px]'>{"Editor's Pick"}</h1>
         <div className='flex flex-col-reverse gap-4 my-4 '>
             {categoiesData.map(category => (
 
