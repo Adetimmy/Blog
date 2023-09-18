@@ -1,6 +1,6 @@
 import React from 'react'
-import { Menu } from '../components/Menu'
-import { CardList } from '../components/CardList'
+import { Menu } from '../../components/Menu'
+import { CardList } from '../../components/CardList'
 
 export default function Blog() {
   return (

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import { Menu } from '../components/Menu'
-import { Comments } from '../components/Comments'
+import { Menu } from '../../components/Menu'
+import { Comments } from '../../components/Comments'
 
 const SinglePage = () => {
   return (

@@ -5,3 +5,29 @@
 h1{
    @apply 2xl:text-[32px] xl:text-[28px] md:text-[20px] text-[15px] font-semibold
 }
+
+.ql-container{
+   font-size: 28px !important ;
+}
+.quill > .ql-container > .ql-editor.ql-blank::before{
+  color: #b3b3b1;
+}
+.write button{
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   background-color: transparent;
+   border: 1px solid #626262;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+}
+
+.writ input{
+   background-color: transparent;
+}
+
+.media_btn button{
+   border-color: #1a8917;
+}

@@ -1,7 +1,7 @@
-import { Footer } from './components/Footer'
-import { Navbar } from './components/Navbar'
-import { Provider } from './components/Provider'
-import { ThemeContextProvider } from './context/useStateContext'
+import { Footer } from '@/src/components/Footer'
+import { Navbar } from '@/src/components/Navbar'
+import { Provider } from '@/src/components/Provider'
+import { ThemeContextProvider } from '@/src/context/useStateContext'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -21,10 +21,10 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
   
   return (
     <html lang="en">
-      <body className={`${inter.className} w-[100vw] h-screen overflow-auto`}>
+      <body className={`${inter.className} w-[100vw] h-screen overflow-x-hidden`}>
       <ThemeContextProvider>
         <Provider>
-          <div className='min-h-screen text-textColor dark:bg-darkBg dark:text-darkColor bg-mainBg flex justify-center py-4 min-w-full'>
+          <div className='min-h-screen  text-textColor dark:bg-darkBg dark:text-darkColor bg-mainBg flex justify-center py-4 min-w-full'>
             <div className={`w-full mx-[30px] sm:mx-[50px] px-[10px] lg:mx-[5%] lg:px-[15px]  xl:mx-[8%] xl:px-[30px] 2xl:mx-[10%] 2xl:px[50px]`}>
               <Navbar />
               {children}
