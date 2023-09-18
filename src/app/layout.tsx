@@ -4,6 +4,7 @@ import { Provider } from '@/src/components/Provider'
 import { ThemeContextProvider } from '@/src/context/useStateContext'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import AuthProvider from '../context/AuthProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,17 +23,19 @@ export default function RootLayout({ children }:{children:React.ReactNode}) {
   return (
     <html lang="en">
       <body className={`${inter.className} w-[100vw] h-screen overflow-x-hidden`}>
-      <ThemeContextProvider>
-        <Provider>
-          <div className='min-h-screen  text-textColor dark:bg-darkBg dark:text-darkColor bg-mainBg flex justify-center py-4 min-w-full'>
-            <div className={`w-full mx-[30px] sm:mx-[50px] px-[10px] lg:mx-[5%] lg:px-[15px]  xl:mx-[8%] xl:px-[30px] 2xl:mx-[10%] 2xl:px[50px]`}>
-              <Navbar />
-              {children}
-              <Footer />
-            </div>
-          </div> 
-        </Provider>
-      </ThemeContextProvider>
+      <AuthProvider>
+        <ThemeContextProvider>
+          <Provider>
+            <div className='min-h-screen  text-textColor dark:bg-darkBg dark:text-darkColor bg-mainBg flex justify-center py-4 min-w-full'>
+              <div className={`w-full mx-[30px] sm:mx-[50px] px-[10px] lg:mx-[5%] lg:px-[15px]  xl:mx-[8%] xl:px-[30px] 2xl:mx-[10%] 2xl:px[50px]`}>
+                <Navbar />
+                {children}
+                <Footer />
+              </div>
+            </div> 
+          </Provider>
+        </ThemeContextProvider>
+      </AuthProvider>  
       </body>
     </html>
   )

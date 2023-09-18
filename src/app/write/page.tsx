@@ -29,7 +29,7 @@ const WritePage = () => {
         }
         <ReactQuill theme='bubble' value={value} onChange={setValue} placeholder='Tell your story....' className='w-full'/>
       </div>
-      <button className='absolute right-5 top-7 text-sm px-5 py-2 bg-[#1a8917] text-[white] rounded-lg '>Publish</button>
+      <button className='absolute right-5 top-7 text-sm px-5 py-2 bg-[#1a8917] text-[white] rounded-2xl '>Publish</button>
    </div>
   )
 }
