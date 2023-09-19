@@ -3,10 +3,26 @@ import Image from 'next/image';
 import React from 'react';
 import ReactQuill from 'react-quill';
 import "react-quill/dist/quill.bubble.css"
+import { useSession } from "next-auth/react"
+import {useRouter} from 'next/navigation'
+
+
 
 const WritePage = () => {
+
+  const router = useRouter()
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState('')
+  const { status } = useSession()
+
+if (status === "loading"){
+  return <div>loading...</div>
+}
+
+else if(status === 'authenticated'){
+  return router.push('/')
+}
+
   return (
     <div className='writ'>
       <input type="text" placeholder='Title' className='p-12 text-[64px]  outline-none placeholder:text-[#b3b3b1] ' />
@@ -27,7 +43,7 @@ const WritePage = () => {
             </button>
           </div>
         }
-        <ReactQuill theme='bubble' value={value} onChange={setValue} placeholder='Tell your story....' className='w-full'/>
+        <ReactQuill theme='bubble' value={value} onChange={(e:any) => setValue(e.target.value)} placeholder='Tell your story....' className='w-full'/>
       </div>
       <button className='absolute right-5 top-7 text-sm px-5 py-2 bg-[#1a8917] text-[white] rounded-2xl '>Publish</button>
    </div>
