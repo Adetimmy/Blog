@@ -16,7 +16,7 @@ export default function Home() {
     <Featured/>
     <CategoryList/>
     <div className="flex gap-[50px]">
-      <CardList/>
+      <CardList cat={null}/>
       <Menu/>
     </div>
   </div>;
