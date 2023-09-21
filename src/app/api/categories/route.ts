@@ -8,7 +8,7 @@ export const GET = async () => {
 
     // ts does not recognise all the models createdd except the default ones are specify in the prismaClinet 
     try {
-        //@ts-expect-error
+     
         const categories = await prisma.category.findMany()
 
         return NextResponse.json(categories, {status:200})

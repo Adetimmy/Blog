@@ -26,7 +26,7 @@ const SinglePage = () => {
         </div>
         <div className='flex gap-[50px]'>
             <div className='mt-[60px]' style={{flex:'5'}}>
-                <div className='text-darkSoft flex flex-col gap-8'>
+                <div className='text-softTextColor dark:text-darkSoft flex flex-col gap-8'>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam qui tempore sapiente doloribus corporis, reiciendis sint itaque distinctio sed alias omnis molestias, a ipsum aut quos unde dolorem assumenda officia eligendi? Aut laborum eaque hic, vitae reiciendis, deleniti facere sequi voluptas neque tempore explicabo quos? Earum neque reprehenderit ullam enim consectetur delectus quaerat qui tempore ab, repellendus nostrum repudiandae excepturi quisquam in reiciendis ratione nisi doloribus vitae rerum suscipit, debitis quis fugiat corporis? Voluptates obcaecati ipsum rem eveniet rerum. Illum natus vero quae eum provident suscipit molestias molestiae laboriosam quo recusandae officia asperiores totam eius hic dolorem dolor deleniti accusamus, placeat, error doloribus architecto blanditiis consectetur aut. Adipisci officiis cum suscipit reiciendis sequi voluptate facere esse voluptatem blanditiis eum. Blanditiis!
                     </p>
