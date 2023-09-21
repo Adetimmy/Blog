@@ -1,16 +1,38 @@
+'use client'
 import { Pagination } from './Pagination'
 import { Card } from './Card'
+import {useSearchParams } from 'next/navigation'
+import { useState } from 'react'
 
-interface Category{
-  
+
+
+type Page = {
+  cat:string | null,
+  page?:number
 }
 
 
-export const CardList =  async () => {
+export const CardList =  ({cat}:Page) => {
+  const [res, setRes] = useState<any>()
+  const searchParams = useSearchParams()
+  const page = Number(searchParams.get('page')) || 1
 
 
-  const res =  await fetch('http://localhost:3000/api/post', {next:{revalidate:10}}) 
-  const data = await res.json() as Promise<Category>
+    fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ''}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Error fetching data: ${response.status}`);
+      }
+        return response.json(); // Parse the response as JSON
+      })
+      .then((data) => {
+        // Handle the parsed data here
+         setRes(data)
+      })
+      .catch((error) => {
+        // Handle any errors that occurred during the fetch
+        console.error(error);
+      })
 
 
   return (
@@ -18,13 +40,11 @@ export const CardList =  async () => {
       <h1 className='my-[50px]'>Recent Posts</h1>
       <div>
         <div>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          {res?.posts?.map((post:any) => <Card
+          posts={post}/> )}
         </div>
       </div>
-      <Pagination/>
+      <Pagination page={page} count={res?.count}/>
     </div>
   )
 }
