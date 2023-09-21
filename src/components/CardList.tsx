@@ -40,7 +40,7 @@ export const CardList =  ({cat}:Page) => {
       <h1 className='my-[50px]'>Recent Posts</h1>
       <div>
         <div>
-          {res?.posts?.map((post:any) => <Card
+          {res?.posts?.map((post:any) => <Card key={post._id}
           posts={post}/> )}
         </div>
       </div>
