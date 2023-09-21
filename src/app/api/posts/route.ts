@@ -56,7 +56,6 @@ import { NextResponse } from "next/server"
 //mind you; you'll need a stable network to connect or will spring up error 
 export const GET = async (req:Request) => {
 
-    req
     const {searchParams} = new URL(req.url) 
 
     const page = searchParams.get('page') as any 

@@ -2,15 +2,19 @@ import { prisma } from "@/src/utils/connect"
 import { NextResponse } from "next/server"
 
 // get single page post
-export const GET = async (req:Request, { params }: { params: { slug: string } } ) => {
+export const GET = async (req:Request ) => {
 
  
-    const { slug } = params
+    const {searchParams} = new URL(req.url) 
+
+    const postSlug = searchParams.get('postSlug') 
  
     try {
     
-        const post = await prisma.post.findUnique({
-            where: {slug},
+        const post = await prisma.comment.findMany({
+            where: {
+                ...(postSlug && { postSlug }),
+            },
             include:{user:true}
         })
         return NextResponse.json({post},{status: 200} ) 

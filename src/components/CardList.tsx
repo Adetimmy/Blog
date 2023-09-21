@@ -13,12 +13,12 @@ type Page = {
 
 
 export const CardList =  ({cat}:Page) => {
+ 
   const [res, setRes] = useState<any>()
-  const searchParams = useSearchParams()
-  const page = Number(searchParams.get('page')) || 1
+  const searchParam = useSearchParams()
+  const pages = Number(searchParam.get('page')) || 1
 
-
-    fetch(`http://localhost:3000/api/posts?page=${page}&cat=${cat || ''}`)
+    fetch(`http://localhost:3000/api/posts?page=${pages}&cat=${cat || ''}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Error fetching data: ${response.status}`);
@@ -44,7 +44,7 @@ export const CardList =  ({cat}:Page) => {
           posts={post}/> )}
         </div>
       </div>
-      <Pagination page={page} count={res?.count}/>
+      <Pagination page={pages} count={res?.count}/>
     </div>
   )
 }
