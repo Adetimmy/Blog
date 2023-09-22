@@ -4,7 +4,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import "react-quill/dist/quill.bubble.css"
 import { useSession } from "next-auth/react"
-import {useRouter} from 'next/navigation'
+import {useRouter} from 'next/router'
 import {getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { app } from '@/src/utils/firebase';
 
@@ -106,7 +106,7 @@ if (res.status === 200) {
 
 
   return (
-    <div className='writ'>
+    <div className='writ -z-10'>
       <div className='flex flex-col lg:flex-row justify-between lg:items-center my-16 xl:mt-2'>
          <input type="text" placeholder='Title' style={{flex:'5'}} className='p-4 text-xl lg:text-[35px] font-semibold xl:p-12 xl:text-[50px]  outline-none placeholder:text-[#b3b3b1] ' value={title} onChange={e => setTitle(e.currentTarget.value)} />
         <label htmlFor="category" className='text-xs'>Select Category: </label>
@@ -120,7 +120,7 @@ if (res.status === 200) {
         </select>
       </div>
 
-      <div className='flex flex-col lg:flex-row write lg:gap-5 h-[700px] relative'>
+      <div className='flex flex-col lg:flex-row write lg:gap-5 h-[700px] relative '>
         <button type="button" onClick={() => setOpen(!open)}>
           <Image src='/plus.png' alt='plus' width={16} height={16} className=''/>
         </button>

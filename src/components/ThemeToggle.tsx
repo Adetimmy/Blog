@@ -5,6 +5,7 @@ import { useStateContext } from '../context/useStateContext'
 
 export const ThemeToggle = () => {
     const {theme, toggle} = useStateContext()
+    console.log(theme)
   return (
     <div className='flex w-10 h-5 rounded-xl cursor-pointer bg-[black] items-center justify-between dark:bg-mainBg relative' onClick={toggle}>
         <Image src='/moon.png' alt='moon' width={14} height={14}/>
