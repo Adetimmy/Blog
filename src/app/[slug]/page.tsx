@@ -33,7 +33,7 @@ const res = await ((await fetch(`http://localhost:3000/api/posts/${slug}`)).json
                     <Image src={post?.user?.image} alt={post?.user?.name} width={50} height={50} className='rounded-full aspect-square'/>
                     </div> }
                     <div className='flex text-[12px] font-semibold flex-col text-softTextColor'>
-                        <span className='text-[20px]'>{post?.user?.name}</span>
+                        <span className='text-[16px]'>{post?.user?.name}</span>
                         <span className=' '>01-01-2024</span>
                     </div>
 

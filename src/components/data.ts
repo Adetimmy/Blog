@@ -1,39 +1,39 @@
 export const categoiesData = [
     {
-      title: "Style",
+      title: "style",
       image:"/style.png",
       color:"#57c4ff31",
       link:"/blog?cat=style" 
     },
     {
-      title: "Fashion",
+      title: "fashion",
       image:"/fashion.png",
       color:"#da85c731",
-      link:"/blog" 
+      link:"/blog?cat=fashion" 
     },
     {
-      title: "Food",
+      title: "food",
       image:"/food.png",
       color:"#7fb88133",
-      link:"/blog" 
+      link:"/blog?cat=food" 
     },
     {
-      title: "Travel",
+      title: "travel",
       image:"/travel.png",
       color:"#ff795736",
-      link:"/blog" 
+      link:"/blog?cat=travel" 
     },
     {
-      title: "Culture",
+      title: "culture",
       image:"/culture.png",
       color:"#ffb04f45",
-      link:"/blog" 
+      link:"/blog?cat=culture" 
     },
     {
-      title: "Coding",
+      title: "coding",
       image:"/coding.png",
       color:"#5e4fff31",
-      link:"/blog" 
+      link:"/blog?cat=coding" 
     },
   ]
   

@@ -107,18 +107,20 @@ if (res.status === 200) {
 
   return (
     <div className='writ'>
-      <input type="text" placeholder='Title' className='p-12 text-[64px]  outline-none placeholder:text-[#b3b3b1] ' value={title} onChange={e => setTitle(e.currentTarget.value)} />
+      <div className='flex flex-col lg:flex-row justify-between lg:items-center my-16 xl:mt-2'>
+         <input type="text" placeholder='Title' style={{flex:'5'}} className='p-4 text-xl lg:text-[35px] font-semibold xl:p-12 xl:text-[50px]  outline-none placeholder:text-[#b3b3b1] ' value={title} onChange={e => setTitle(e.currentTarget.value)} />
+        <label htmlFor="category" className='text-xs'>Select Category: </label>
+        <select id='category' style={{flex:'1'}} className='px-3 py-2 md:px-5 md:py-3 lg:ml-10 w-max border outline-none rounded-xl border-[lightgray] dark:bg-[transparent] dark:text-darkSoft dark:border-[#00800026]' onChange={(e) => setCatSlug(e.target.value)}>
+          <option value="style">style</option>
+          <option value="fashion">fashion</option>
+          <option value="food">food</option>
+          <option value="culture">culture</option>
+          <option value="travel">travel</option>
+          <option value="coding">coding</option>
+        </select>
+      </div>
 
-      <select className='mt-10 px-5 py-3 ml-10 w-max' onChange={(e) => setCatSlug(e.target.value)}>
-        <option value="style">style</option>
-        <option value="fashion">fashion</option>
-        <option value="food">food</option>
-        <option value="culture">culture</option>
-        <option value="travel">travel</option>
-        <option value="coding">coding</option>
-      </select>
-
-      <div className='flex write gap-5 h-[700px] relative'>
+      <div className='flex flex-col lg:flex-row write lg:gap-5 h-[700px] relative'>
         <button type="button" onClick={() => setOpen(!open)}>
           <Image src='/plus.png' alt='plus' width={16} height={16} className=''/>
         </button>
@@ -141,7 +143,7 @@ if (res.status === 200) {
 
         <ReactQuill theme='bubble' value={value} onChange={setValue} placeholder='Tell your story....' className='w-full'/>
       </div>
-      <button className='absolute right-5 top-7 text-sm px-5 py-2 bg-[#1a8917] text-[white] rounded-2xl' onClick={handleSubmit}>Publish</button>
+      <button className='absolute right-5 xl:top-7 top-20 text-sm px-5 py-2 bg-[#1a8917] text-[white] rounded-2xl' onClick={handleSubmit}>Publish</button>
    </div>
   )
 }

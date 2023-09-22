@@ -12,12 +12,12 @@ export const Menu = () => {
       <div className='flex flex-col-reverse gap-4 my-1  '>
         {categoiesData.map(category => (
 
-          <Link href='/' key={category.title} className='flex items-center gap-5'>
+          <Link href={`/blog?cat=${category.title}`} key={category.title} className='flex items-center gap-5'>
             <div className='flex-1 relative h-[50px] aspect-square'>
               <Image src={category.image} alt='' fill className='rounded-full object-cover border-[3px] border-[lightgray] ' />
             </div>
             <div className='flex flex-col gap-1' style={{flex:"4"}}>
-              <span className={`text-[8px] px-2 py-1 rounded-xl w-max`} style={{backgroundColor:`${category.color}`}}>{category.title}</span>
+              <span className={`text-[8px] px-2 py-1 rounded-xl w-max capitalize`} style={{backgroundColor:`${category.color}`}}>{category.title}</span>
               <h3 className='font-normal text-softTextColor text-[12px]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
               <div className='text-[10px]'>
                 <span className=''> John Doe</span>
@@ -35,7 +35,7 @@ export const Menu = () => {
         <div className='flex flex-col-reverse gap-4 my-4 '>
             {categoiesData.map(category => (
 
-              <Link href='/' key={category.title} className='flex items-center gap-5'>
+              <Link href={`/blog?cat=${category.title}`} key={category.title} className='flex items-center gap-5'>
               <div className='flex flex-col gap-1' style={{flex:"4"}}>
                   <span className={`text-[8px] px-2 py-1 rounded-xl w-max`} style={{backgroundColor:`${category.color}`}}>{category.title}</span>
                   <h3 className='font-normal text-softTextColor text-[12px]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>

@@ -25,7 +25,7 @@ export const CategoryList = async () => {
           (await data)?.map((category) => (
               <Link
               key={category._id}
-              href={category.link}
+              href={`/blog?cat=${category.slug}`}
               className={`flex items-center gap-3 w-full md:w-[45%] lg:w-[25%] xl-w-[20%] 2xl:w-[15%]  h-20 justify-center rounded-xl`
                         }  style={{backgroundColor:`${category.color}`}}
               >

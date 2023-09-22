@@ -31,9 +31,8 @@ export const Card = ({posts}:Post) => {
                 <Link href={`/${posts.slug}`}>
                     <h1 className="text-[24px] dark:text-darkSoft">{posts.title}</h1>
                 </Link>
-                <p className="text-[18px] font-light text-softTextColor ">
-                  {posts.desc}
-                </p>
+                <div className="text-[18px] font-light text-softTextColor " dangerouslySetInnerHTML={{__html: posts.desc}} />
+             
                 <Link href={`/${posts.slug}`} className="border-b-[1px] border-[crimson] w-max py-1">Read More</Link>
             </div>
           </div>

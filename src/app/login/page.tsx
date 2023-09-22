@@ -12,7 +12,7 @@ console.log(status, data)
   }
 
   else if (status === 'authenticated'){
-    router.push('/') 
+    router.back() 
   }
 
   return (

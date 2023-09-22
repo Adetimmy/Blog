@@ -31,3 +31,7 @@ h1{
 .media_btn button{
    border-color: #1a8917;
 }
+
+option{
+   @apply dark:bg-darkBg
+}
