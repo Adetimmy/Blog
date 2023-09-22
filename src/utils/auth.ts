@@ -4,6 +4,8 @@ import GoogleProvider from "next-auth/providers/google"
 import FacebookProvider from "next-auth/providers/facebook"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import { prisma } from "./connect"
+import { FC } from "react"
+import { getServerSession } from "next-auth"
 // import { PrismaClient } from "@prisma/client"
 
 
@@ -40,5 +42,6 @@ export const nextOptions = {
     ],
 }
 
-
-
+// to be able to get the user if loggged in on the server-side backend
+ export const getAuthSession = () => getServerSession(nextOptions)
+ 

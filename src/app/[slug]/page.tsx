@@ -21,7 +21,6 @@ const res = await ((await fetch(`http://localhost:3000/api/posts/${slug}`)).json
  
    const { post } = res
 
-
   return (
     <div className=''>
         <div className='flex gap-[30px] my-[50px]'>
@@ -48,7 +47,7 @@ const res = await ((await fetch(`http://localhost:3000/api/posts/${slug}`)).json
             <div className='mt-[60px]' style={{flex:'5'}}>
                 <div className='text-softTextColor dark:text-darkSoft flex flex-col gap-8' dangerouslySetInnerHTML={{__html: post?.desc}}/>
 
-             <Comments />
+             <Comments postSlug ={slug} />
            </div>
           
             <Menu />

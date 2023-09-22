@@ -1,4 +1,5 @@
 
+import { getAuthSession } from "@/src/utils/auth"
 import { prisma } from "@/src/utils/connect"
 import { NextResponse } from "next/server"
 
@@ -101,3 +102,32 @@ const query = {
 
     }
 }
+
+
+//create a post
+export const POST = async (req:Request ) => {
+
+
+
+    const session  = await getAuthSession()  
+    
+    if(!session){
+       return NextResponse.json( {message:"not authenticated!"}, {status: 401})
+    }
+   
+    
+       try {
+           const body = await req.json()
+           const post = await prisma.post.create({
+               data: {...body, userEmail: session.user?.email} as any 
+           })
+           
+           return NextResponse.json({post},{status: 200} ) 
+   
+       } catch (error) {
+           console.log(error)
+   
+           return NextResponse.json( {message:"Something went wrong!"}, {status: 500})
+   
+       }
+   }
