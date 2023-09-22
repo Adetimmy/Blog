@@ -1,12 +1,12 @@
 'use client'
 import Image from 'next/image';
 import React from 'react';
-import ReactQuill from 'react-quill';
 import "react-quill/dist/quill.bubble.css"
 import { useSession } from "next-auth/react"
-import {useRouter} from 'next/router'
+import {useRouter} from 'next/navigation'
 import {getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { app } from '@/src/utils/firebase';
+import dynamic from 'next/dynamic';
 
 
 const storage = getStorage(app)
@@ -14,7 +14,7 @@ const storage = getStorage(app)
 const WritePage = () => {
   const { status } = useSession()
 
-
+  const ReactQuill = dynamic (() => import ('react-quill'), {ssr:false} )
   const router = useRouter()
 
 

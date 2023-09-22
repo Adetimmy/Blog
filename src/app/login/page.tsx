@@ -1,18 +1,18 @@
 'use client'
 import  { signIn, useSession} from 'next-auth/react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
 
   const router = useRouter()  
-  const { status, data } = useSession()
-console.log(status, data)
+  const { status } = useSession()
+
   if (status === "loading"){
     return <div className=''>Loading...</div>
   }
 
   else if (status === 'authenticated'){
-    router.back() 
+    router.back()
   }
 
   return (
