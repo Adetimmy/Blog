@@ -22,9 +22,9 @@ export const CategoryList = async () => {
       <h1 className='my-12 font-bold text-3xl'>Popular Categories</h1>
       <div className='flex gap-5 flex-wrap justify-between '>
         {
-          (await data)?.map((category) => (
+          (await data)?.map((category, index) => (
               <Link
-              key={category._id}
+              key={index}
               href={`/blog?cat=${category.slug}`}
               className={`flex items-center gap-3 w-full md:w-[45%] lg:w-[25%] xl-w-[20%] 2xl:w-[15%]  h-20 justify-center rounded-xl`
                         }  style={{backgroundColor:`${category.color}`}}

@@ -40,8 +40,11 @@ export const CardList =  ({cat}:Page) => {
       <h1 className='my-[50px]'>Recent Posts</h1>
       <div>
         <div>
-          {res?.posts?.map((post:any) => <Card key={post._id}
-          posts={post}/> )}
+          {res?.posts?.map((post:any, index:any) => (
+          <div key={index}>
+            <Card posts={post}/> 
+          </div>
+          ))}
         </div>
       </div>
       <Pagination page={pages} count={res?.count}/>

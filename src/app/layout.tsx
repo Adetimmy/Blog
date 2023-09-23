@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Blog App',
   description: 'The best blog app!',
-  meta:"utf-8"
 }
 
 export default function RootLayout({ children }:{children:React.ReactNode}) {

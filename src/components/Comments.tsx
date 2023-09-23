@@ -72,8 +72,8 @@ const fetchComments = async (url:string) => {
         <h1 className='text-[20px] text-softTextColor my-5'>Comments</h1>
         {status === "authenticated"?
         <div className='flex items-center flex-col lg:flex-row justify-between gap-7'>
-            <textarea placeholder='write a commment ...' className='p-5 w-full' onChange={e => setDesc(e.target.value)} value={desc}></textarea>
-            <button className='self-end lg:self-auto rounded-md text-[lightgray] bg-[teal] font-bold px-5 py-2'onClick={handleSubmit} >Send</button>
+            <textarea placeholder='write a commment ...' className='p-5 w-full text-softTextColor' onChange={e => setDesc(e.target.value)} value={desc} />
+            <button className='self-end lg:self-auto rounded-md text-darkSoft bg-[teal] font-bold px-5 py-2'onClick={handleSubmit} >Send</button>
         </div>
         :
         <Link href='/login' className='text-sm'>Login to write a comment</Link>
@@ -86,29 +86,29 @@ const fetchComments = async (url:string) => {
                     <div>
                         <Image src='/coding.png' alt='john doe' width={50} height={50} className='rounded-full aspect-square'/>
                     </div>
-                    <div className='flex text-[12px] font-semibold flex-col text-softTextColor'>
+                    <div className='flex text-[12px] font-semibold flex-col dark:text-darkSoft text-softTextColor'>
                         <span className='text-[15px]'>John Doe</span>
                         <span className=' '>01-01-2024</span>
                     </div>
                 </div>
-                <p className='text-[15px] text-softTextColor mt-3 font-light'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo voluptatem voluptas iure reiciendis! Soluta, eos!</p>
+                <p className='text-[15px] text-softTextColor dark:text-darkSoft mt-3 font-light'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo voluptatem voluptas iure reiciendis! Soluta, eos!</p>
             </div>
 
-        {isLoading? "loading comments..." : data?.comments?.map((item:any ) => {
+        {isLoading? "loading comments..." : data?.comments?.map((item:any,index:any ) => {
                 return (
 
-            <div className='flex flex-col gap-1 mb-[50px]' key={item?._id}>
+            <div className='flex flex-col gap-1 mb-[50px]' key={index}>
                 <div className='flex gap-4 items-center'>
                     {item?.user?.image &&
                     <div>
                         <Image src={item?.user?.image } alt={item?.user?.name} width={50} height={50} className='rounded-full aspect-square'/>
                     </div> }
-                    <div className='flex text-[12 px] font-semibold flex-col text-softTextColor'>
-                        <span className='text-[20px]'>{item?.user?.name}</span>
+                    <div className='flex text-[12px] font-semibold flex-col dark:text-darkSoft text-softTextColor'>
+                        <span className='text-[15px]'>{item?.user?.name}</span>
                         <span className=' '>{item?.createdAt?.substring(0, 10)}</span>
                     </div>
                 </div>
-                <p className='text-[18px] text-darkSoft mt-3 font-light'>{item?.desc}</p>
+                <p className='text-[15px] text-softTextColor dark:text-darkSoft mt-3 font-light'>{item?.desc}</p>
             </div>
                 )
             })

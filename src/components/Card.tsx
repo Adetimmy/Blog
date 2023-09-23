@@ -16,7 +16,7 @@ interface Post {
 export const Card = ({posts}:Post) => {
   return (
 
-    <div className="mb-[50px] flex items-center gap-[30px]" key={posts._id}>
+    <div className="mb-[50px] flex items-center gap-[30px]">
         {posts.img && 
         <div className="flex-1 h-[350px] relative aspect-square hidden lg:inline">
           <Image  src={posts.img} alt='' fill className="object-cover"/>
@@ -31,7 +31,9 @@ export const Card = ({posts}:Post) => {
                 <Link href={`/${posts.slug}`}>
                     <h1 className="text-[24px] dark:text-darkSoft">{posts.title}</h1>
                 </Link>
-                <div className="text-[18px] font-light text-softTextColor " dangerouslySetInnerHTML={{__html: posts.desc}} />
+                <div className="text-[18px] font-light text-softTextColor relative " dangerouslySetInnerHTML={{__html: posts.desc}} >
+                  <span className=""></span>
+                </div>
              
                 <Link href={`/${posts.slug}`} className="border-b-[1px] border-[crimson] w-max py-1">Read More</Link>
             </div>
